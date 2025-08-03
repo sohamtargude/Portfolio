@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soham - Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: rgb(12, 12, 33);
+      color: white;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100px;
+      background-color: rgb(26, 26, 69);
+      font-size: 2.5rem;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      list-style: none;
+      margin: 0 23px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+    }
+
+    nav ul li a:hover {
+      color: rgb(156, 156, 232);
+    }
+
+    .left {
+      font-size: 4rem;
+      font-weight: bold;
+    }
+
+    .firstsection {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 100px 0; /* Reduced margin */
+    }
+
+    .firstsection > div {
+      width: 30%;
+      margin-right: 300px;
+    }
+
+    .leftsection {
+      font-size: 7rem;
+    }
+
+    .rightsection img {
+      width: 80%;
+      margin-left: 100px; /* Reduced */
+      margin-top: 50px;   /* Reduced */
+    }
+
+    .purple {
+      color: blueviolet;
+    }
+
+    #element {
+      color: blueviolet;
+    }
+
+    main hr {
+      border: 0;
+      background: #9c97f1;
+      height: 1.5px;
+      margin: 60px 1px;
+    }
+
+    .aboutsection,
+    .projectsection,
+    .connectsection {
+      max-width: 80vw;
+      margin: auto;
+      font-size: 1.5rem;
+      padding-top: 40px;
+      line-height: 1.8;
+    }
+
+    .projectsection h2 {
+      font-size: 2rem;
+      margin-top: 20px;
+      color: #9c97f1;
+    }
+
+    .connectsection {
+      text-align: center;
+      padding-bottom: 50px;
+    }
+
+    .social-links a {
+      margin: 20px;
+      text-decoration: none;
+      color: #9c97f1;
+      font-size: 1.8rem;
+    }
+
+    .social-links a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="left"><span id="typed-title"></span></div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="firstsection">
+      <div class="leftsection">
+        Hi, My name is <span class="purple">Soham</span>
+        <div>and I am a passionate</div>
+        <span id="element"></span>
+      </div>
+      <div class="rightsection">
+        <img src="images/bg.png" alt="Profile Image"/>
+      </div>
+    </section>
+
+    <section class="aboutsection">
+      <hr />
+      <h1>About Me</h1>
+      <p>
+        I am Soham, a passionate and driven <strong>Data Scientist</strong> currently pursuing my studies at <strong>VIT Vellore</strong>.
+        My work involves extracting insights from data, building predictive models, and developing end-to-end machine learning pipelines.
+        <br /><br />
+        I have hands-on experience in <strong>Python, SQL, Scikit-learn, Pandas, Matplotlib, Seaborn</strong>, and <strong>Django</strong>.
+        I enjoy working with real-world datasets, performing exploratory data analysis, model training, and deploying data-driven applications.
+        <br /><br />
+        I am constantly learning, experimenting, and looking for opportunities to apply data science to solve meaningful problems.
+      </p>
+    </section>
+
+    <section class="projectsection">
+      <hr />
+      <h1>Projects</h1>
+      <a href="https://github.com/sohamtargude/Project_california.git">
+        <h2>🏠 California House Price Prediction</h2>
+      </a>
+      <p>
+        Built a machine learning model to predict California house prices using features like location, population, and income. Applied data cleaning, feature engineering, and regression techniques using Python libraries such as <strong>Scikit-learn</strong> and <strong>Pandas</strong>.
+      </p>
+
+      <a href="https://github.com/sohamtargude/employee_project.git">
+        <h2>🧑‍💼 Employee Management System</h2>
+      </a>
+      <p>
+        Developed a full-stack web application using <strong>Python, Django, and SQL</strong>. It enables CRUD operations like adding, deleting, and promoting employees. Designed the front-end UI using <strong>HTML and CSS</strong> to offer a clean and intuitive interface.
+      </p>
+    </section>
+
+    <section class="connectsection">
+      <hr />
+      <h1>Connect With Me</h1>
+      <div class="social-links">
+        <a href="https://github.com/sohamtargude" target="_blank">GitHub</a>
+        <a href="https://instagram.com/thesohamtargude" target="_blank">Instagram</a>
+        <a href="mailto:sohamtargude@gmail.com" target="_blank">Gmail</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    // Animation for role descriptions
+    var typed = new Typed('#element', {
+      strings: ['Web Developer', 'Data Scientist', 'ML Enthusiast'],
+      typeSpeed: 50,
+    });
+
+    // Animation for title "Soham's Portfolio"
+    var titleTyped = new Typed('#typed-title', {
+      strings: ["Soham's Portfolio"],
+      typeSpeed: 50,
+      showCursor: false
+    });
+  </script>
+</body>
+</html>
