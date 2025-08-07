@@ -11,6 +11,7 @@
     * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
@@ -21,30 +22,13 @@
 
     nav {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       align-items: center;
       height: 100px;
       background-color: rgb(26, 26, 69);
       font-size: 2.5rem;
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-    }
-
-    nav ul li {
-      list-style: none;
-      margin: 0 23px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-    }
-
-    nav ul li a:hover {
-      color: rgb(156, 156, 232);
+      flex-wrap: wrap;
+      padding: 0 20px;
     }
 
     .left {
@@ -56,12 +40,16 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 100px 0; /* Reduced margin */
+      margin: 100px 0;
+      flex-wrap: wrap;
+      padding: 0 20px;
     }
 
     .firstsection > div {
-      width: 30%;
-      margin-right: 300px;
+      width: 100%;
+      max-width: 500px;
+      margin: 20px;
+      text-align: center;
     }
 
     .leftsection {
@@ -69,9 +57,10 @@
     }
 
     .rightsection img {
-      width: 80%;
-      margin-left: 100px; /* Reduced */
-      margin-top: 50px;   /* Reduced */
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin-top: 50px;
     }
 
     .purple {
@@ -121,6 +110,72 @@
       color: #ffffff;
       text-decoration: underline;
     }
+
+    /* ----------- Responsive Media Queries ----------- */
+    @media (max-width: 1024px) {
+      .leftsection {
+        font-size: 5rem;
+      }
+
+      .rightsection img {
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .left {
+        font-size: 3rem;
+      }
+
+      nav {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+      }
+
+      .leftsection {
+        font-size: 3.5rem;
+      }
+
+      .aboutsection,
+      .projectsection,
+      .connectsection {
+        font-size: 1.2rem;
+      }
+
+      .projectsection h2 {
+        font-size: 1.6rem;
+      }
+
+      .social-links a {
+        font-size: 1.4rem;
+        margin: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .leftsection {
+        font-size: 2.5rem;
+      }
+
+      .left {
+        font-size: 2rem;
+      }
+
+      .aboutsection,
+      .projectsection,
+      .connectsection {
+        font-size: 1rem;
+      }
+
+      .projectsection h2 {
+        font-size: 1.2rem;
+      }
+
+      .social-links a {
+        font-size: 1.2rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -142,7 +197,7 @@
       </div>
     </section>
 
-    <section class="aboutsection">
+    <section class="aboutsection" id="about">
       <hr />
       <h1>About Me</h1>
       <p>
@@ -156,25 +211,28 @@
       </p>
     </section>
 
-    <section class="projectsection">
+    <section class="projectsection" id="projects">
       <hr />
       <h1>Projects</h1>
-      <a href="https://github.com/sohamtargude/Project_california.git">
+      <a href="https://github.com/sohamtargude/Project_california.git" target="_blank">
         <h2>🏠 California House Price Prediction</h2>
       </a>
       <p>
-        Built a machine learning model to predict California house prices using features like location, population, and income. Applied data cleaning, feature engineering, and regression techniques using Python libraries such as <strong>Scikit-learn</strong> and <strong>Pandas</strong>.
+        Built a machine learning model to predict California house prices using features like location, population, and income.
+        Applied data cleaning, feature engineering, and regression techniques using Python libraries such as
+        <strong>Scikit-learn</strong> and <strong>Pandas</strong>.
       </p>
 
-      <a href="https://github.com/sohamtargude/employee_project.git">
+      <a href="https://github.com/sohamtargude/employee_project.git" target="_blank">
         <h2>🧑‍💼 Employee Management System</h2>
       </a>
       <p>
-        Developed a full-stack web application using <strong>Python, Django, and SQL</strong>. It enables CRUD operations like adding, deleting, and promoting employees. Designed the front-end UI using <strong>HTML and CSS</strong> to offer a clean and intuitive interface.
+        Developed a full-stack web application using <strong>Python, Django, and SQL</strong>. It enables CRUD operations like adding,
+        deleting, and promoting employees. Designed the front-end UI using <strong>HTML and CSS</strong> to offer a clean and intuitive interface.
       </p>
     </section>
 
-    <section class="connectsection">
+    <section class="connectsection" id="connect">
       <hr />
       <h1>Connect With Me</h1>
       <div class="social-links">
@@ -191,6 +249,7 @@
     var typed = new Typed('#element', {
       strings: ['Web Developer', 'Data Scientist', 'ML Enthusiast'],
       typeSpeed: 50,
+      loop: true
     });
 
     // Animation for title "Soham's Portfolio"
